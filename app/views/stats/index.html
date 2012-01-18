@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- ========================= CSS ==================================== -->
+
+<link rel="stylesheet" type="text/css" href="css/data_tree.css" />
+<link rel="stylesheet" type="text/css" href="css/widgets.css" />
+
+<!-- ========================= EXT JS STUFF ================================ -->
+
+<!-- basic extjs code -->
+
+<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css" />
+
+
+<script type="text/javascript" src="extjs/adapter-ext/ext-base.js"></script>
+
+<!--
+<script type="text/javascript" src="extjs-all/ext-all-debug.js"></script>
+-->
+<script type="text/javascript" src="extjs/ext-all.js"></script>
+
+<!-- ========================= CORE AND LOGIC ===================== -->
+
+<script type="text/javascript" src="js/pkle.min.js"></script>
+
+<!-- ========================= USER CODE =================================== -->
+
+<script type="text/javascript">
+var PKLEInstance = new Object
+</script>
+
+<script type="text/javascript" src="js/data_example.js"></script>
+<script type="text/javascript" src="js/i18n_ru.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/init_example.js"></script>
+
+<script text="text/javascript">
+function submit_pkle_script()
+{
+  logic_editor.send_object_data_to_server(function(server_reply)
+  {
+    var json_result
+
+    // TODO: Actually, you should do this on server-side.
+    try
+    {
+      json_result = Ext.decode(server_reply)
+    }
+    catch (err)
+    {
+      CRITICAL_ERROR("Failed to parse server reply: " + server_reply)
+      return
+    }
+
+    if (json_result.error)
+    {
+      if (json_result.error.id)
+      {
+        CRITICAL_ERROR("Server returned error: " + json_result.error.id)
+        return
+      }
+
+      CRITICAL_ERROR("Server returned unrecognized error, full server reply: " + server_reply)
+      return
+    }
+
+    if (!json_result.ok || !json_result.ok.code)
+    {
+      CRITICAL_ERROR("Ivalid naswer from server: " + Ext.encode(server_reply))
+      return
+    }
+
+    var code = json_result.ok.code
+
+    alert(code) // TODO: Do something with the returned data
+  })
+}
+</script>
+
+</head>
+<body>
+
+  <div id="pk-le-ctrl-impl">
+   </i>Loading script...</i>
+  </div>
+
+  <input type="button" onClick="submit_pkle_script()" value="Submit">
+
+</body>
+</html>

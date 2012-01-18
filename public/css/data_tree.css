@@ -1,0 +1,156 @@
+#pk-le-ctrl ul
+{
+  list-style-type: disc;
+  padding: 0px 0px 0px 30px;
+  margin:  0px 0px 0px 0px;
+}
+
+#pk-le-ctrl ol
+{
+  padding: 0px 0px 0px 40px;
+  margin:  0px 0px 0px 0px;
+}
+
+/*---------------------------------------------------------------------------*/
+
+#pk-le-ctrl .highlighted
+{
+  background-color: #9CF !important;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/* Note: this icons can be used outside of pk-le-ctrl */
+.editable-text {
+  vertical-align: baseline;
+  cursor: pointer;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 85%;
+  border: 1px dotted;
+  /*color: purple;*/
+  /*background-color: #EAEAFF;*/
+}
+
+/* Comment. Note: this icons can be used outside of pk-le-ctrl */
+.lang-comment
+{
+  font-style: italic;
+  /*font-weight: bolder;*/
+  background-color: #DDD;
+  /*color: #282;*/
+}
+
+/*
+--------------------------------------------------------------------------------
+ TODO: Schema-dependent things! Move to LILE!
+--------------------------------------------------------------------------------
+*/
+
+.variable_name
+{
+  font-style: italic;
+  font-weight: bolder;
+  color: #909;
+}
+
+#pk-le-ctrl .ul-else-if
+{
+  list-style-type: none;
+  /*background-color: #DDD;*/
+  padding: 0px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+}
+
+
+/* Statement list */
+#pk-le-ctrl .node-visibility_rule\.list > ol
+{
+  list-style-type: none;
+  padding: 0px 0px 0px 10px;
+  margin:  0px 0px 0px 0px;
+/*
+  background-color: #CFC;
+  border: 2px solid #6A6;
+*/
+}
+
+/* Text inside empty visibility_rule list */
+#pk-le-ctrl .visibility_rule\.list-empty-li
+{
+  background-color: #DDD;
+  border: 2px solid #BBB;
+  margin: 0px 0px 2px 0px;
+  padding:1px 4px 1px 4px;
+}
+
+/* Comment in visibility_rule list */
+#pk-le-ctrl .visibility_rule\.list-comment-li
+{
+  background-color: #DDD;
+  border: 2px solid #BBB;
+  margin: 0px 0px 2px 0px;
+  padding:1px 4px 1px 4px;
+}
+
+/* Common visibility_rule list item */
+#pk-le-ctrl .visibility_rule\.list-common-li
+{
+  background-color: #CFC;
+  border: 2px solid #6A6;
+  margin: 0px 0px 2px 0px;
+  padding:1px 4px 1px 4px;
+}
+
+/* Boolean expressions*/
+#pk-le-ctrl .node-visibility_rule > * > .node-boolean,
+/*
+#pk-le-ctrl .node-if > .node-boolean,
+#pk-le-ctrl .node-while > .node-boolean,
+#pk-le-ctrl .node-if_elseif_else > .node-boolean,
+*/
+#pk-le-ctrl .node-if-elseif_list-item > .node-boolean
+{
+  background-color: #FFA;
+  border: 1px solid #AA5;
+  margin: 0px 0px 0px 0px;
+  padding:0px 0px 0px 0px;
+}
+
+
+/* Common parameters of border */
+#pk-le-ctrl .node-visibility_rule\.list > ol,
+#pk-le-ctrl .visibility_rule\.list-empty-li,
+#pk-le-ctrl .visibility_rule\.list-comment-li,
+#pk-le-ctrl .visibility_rule\.list-common-li,
+#pk-le-ctrl .node-visibility_rule > * > .node-boolean,
+/*
+#pk-le-ctrl .node-while > .node-boolean,
+#pk-le-ctrl .node-if > .node-boolean,
+#pk-le-ctrl .node-if_elseif_else > .node-boolean,
+*/
+#pk-le-ctrl .node-if-elseif_list-item > .node-boolean
+{
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+#pk-le-ctrl .highlighted *
+{
+  background-color: #9CF !important;
+  border-color: #69C !important;
+}
+
+
+/*.container-list:hover, .container-list-item:hover, .container-literal:hover,
+.container-record:hover, .container-value:hover, .container-variant:hover
+{
+  background-color: yellow !important;
+}*/

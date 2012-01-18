@@ -1,0 +1,82 @@
+/* Note: menu is not a child of pk-le-ctrl */
+
+.current_variant_choice
+{
+  font-style: italic;
+  font-weight: bolder;
+  /*background-color: #DDD;*/
+  color: #44C;
+}
+
+.choice_caption
+{
+  text-align: center;
+  font-weight: bold;
+  background-color: #CEF;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/******************************************************************************/
+
+/* Note: this icons can be used outside of pk-le-ctrl */
+
+.button-add { background-image:url(/img/icons/add.jpg); }
+.button-save { background-image:url(/img/icons/save.gif); }
+.button-delete { background-image:url(/img/icons/remove.jpg); }
+.button-cancel { background-image:url(/img/icons/delete.gif); }
+.button-expand { background-image:url(/img/icons/dots.jpg); }
+.button-up { background-image:url(/img/icons/arrow-up.jpg); }
+.button-right { background-image:url(/img/icons/arrow-right.jpg); }
+.button-down { background-image:url(/img/icons/arrow-down.jpg); }
+.button-left { background-image:url(/img/icons/arrow-left.jpg); }
+
+.button-open-change-list-item-menu { background-image:url(/img/icons/dots.jpg); }
+
+.button-with-text {
+  vertical-align: baseline;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image:url(/img/icons/circle.png);
+  cursor: pointer;
+  border: none;
+  /*
+  border: solid 0px;
+  border-color: #DDDDDD;
+  */
+  background-color: transparent;
+
+  width: 13px;
+  height: 14px;
+  color: #FFFFFF;
+  font-size: 9px;
+  text-align: center;
+}
+
+.button-add, .button-save, .button-delete, .button-cancel,
+.button-up, .button-right, .button-down, .button-left,
+.button-expand, .button-open-change-list-item-menu,
+.variant-boolean
+{
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: auto;
+  cursor: pointer;
+  margin-left: 1px;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  margin-right: 1px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  border: none;
+  /*
+  border: solid 0px;
+  border-color: #DDDDDD;
+  */
+  background-color: transparent;
+
+  width: 10px;
+  height: 10px;
+}
