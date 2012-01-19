@@ -5,9 +5,14 @@ class StatsController < ActionController::Base
   end
 
   def query
-    p params # debug print
     http = Net::HTTP.new('api.logiceditor.com', 443)
-    resp = http.post('/tq_reviews/data.json', params.to_json)
-    render :text => resp.message
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    r = Net::HTTP::Post.new('/tq_reviews/data.json')
+    r.body = params.to_json
+    r["Content-Type"] = "application/json"
+    a = http.request(r)
+    #Review.find_by_sql()
+    render :json => a.body
   end
 end
