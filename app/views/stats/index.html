@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/data_tree.css" />
 <link rel="stylesheet" type="text/css" href="css/widgets.css" />
 
+
+<link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css" />
+
 <!-- ========================= EXT JS STUFF ================================ -->
 
 <!-- basic extjs code -->
@@ -36,6 +39,11 @@ var PKLEInstance = new Object
 <script type="text/javascript" src="js/i18n_ru.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/init_example.js"></script>
+
+<!-- jQuery and DataTable -->
+<script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+<script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+
 
 <script text="text/javascript">
 function submit_pkle_script()
@@ -67,15 +75,35 @@ function submit_pkle_script()
       return
     }
 
-    if (!json_result.ok || !json_result.ok.code)
+    if (!json_result.ok || !json_result.ok.values)
     {
       CRITICAL_ERROR("Ivalid naswer from server: " + Ext.encode(server_reply))
       return
     }
 
-    var code = json_result.ok.code
+    var fields = json_result.ok.results;
+    var values = json_result.ok.values;
 
-    alert(code) // TODO: Do something with the returned data
+    jQuery("#datatable").dataTable({
+      "aaData": values,
+      "aoColumns" : [
+         {"sTitle": "id"},
+         {"sTitle": "created_at"},
+{"sTitle":  "comments_count"},
+{"sTitle":  "user_id"},
+ {"sTitle":  "user_name"},
+ {"sTitle":  "user_roles_mask"},
+ {"sTitle":  "user_pressmanager_id"},
+ {"sTitle":  "user_created_at"},
+ {"sTitle":  "business_id"},
+ {"sTitle":  "business_name"},
+ {"sTitle":  "user_thanks_count"},
+ {"sTitle":  "thanks_count"},
+ {"sTitle":  "impressions_count"},
+ {"sTitle":  "rating"},
+ {"sTitle":  "thanks_visible"},
+ {"sTitle":  "impressions_visible"}]
+   })
   })
 }
 </script>
@@ -88,6 +116,8 @@ function submit_pkle_script()
   </div>
 
   <input type="button" onClick="submit_pkle_script()" value="Submit">
+
+  <table id="datatable"></table>
 
 </body>
 </html>
