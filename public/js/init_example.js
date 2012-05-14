@@ -1,5 +1,6 @@
 // TODO: Replace this with YOUR server URL.
 var SERVER_URL = "http://omsk.tulp.dev/dbstats/reviews"
+//var SERVER_URL = "http://omsk.tulp.dev:81/dbstats/reviews"
 
 //------------------------------------------------------------------------------
 

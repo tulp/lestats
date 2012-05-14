@@ -5,7 +5,7 @@ class StatsController < ActionController::Base
   end
 
   def reviews
-    fields, values = do_request('/tq_reviews/data.json')
+    fields, values = do_request('/t_query/data.json')
     render(json: {ok: { fields: fields, values: values}}.to_json)
   end
 
@@ -17,6 +17,7 @@ class StatsController < ActionController::Base
   private
 
   def do_request(processing_url)
+    logger.info processing_url
     http = Net::HTTP.new('api.logiceditor.com', 443)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -24,6 +25,10 @@ class StatsController < ActionController::Base
     r.body = params.to_json
     r["Content-Type"] = "application/json"
     resp = http.request(r)
+    print "---"
+    print resp
+    print "---"
+    print resp.body
     sql = ActiveSupport::JSON.decode(resp.body)['ok']['code']
     pgresult = CustomQuery.run(sql)
     [pgresult.fields, pgresult.values]

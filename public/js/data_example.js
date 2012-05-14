@@ -3,61 +3,64 @@ var EXAMPLE_OBJECT_DATA = {
         "1": {
             "1": {
                 "1": {
-                    "type": "tq.city.moscow"
+                    "1": {
+                        "type": "tq.city.moscow"
+                    },
+                    "type": "tq.city"
                 },
-                "type": "tq.city"
-            },
-            "2": {
-                "1": {
-                    "type": "tq.user.role.any"
+                "2": {
+                    "1": {
+                        "type": "tq.user.role.any"
+                    },
+                    "type": "tq.user.role"
                 },
-                "type": "tq.user.role"
-            },
-            "3": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.thanks.limit.unlimited"
+                "3": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.thanks.limit.unlimited"
+                    },
+                    "type": "tq.sq.reviews.filter.thanks.limit"
                 },
-                "type": "tq.sq.reviews.filter.thanks.limit"
-            },
-            "4": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.thanks.visible.no"
+                "4": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.thanks.visible.no"
+                    },
+                    "type": "tq.sq.reviews.filter.thanks.visible"
                 },
-                "type": "tq.sq.reviews.filter.thanks.visible"
-            },
-            "5": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.impressions.limit.unlimited"
+                "5": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.impressions.limit.unlimited"
+                    },
+                    "type": "tq.sq.reviews.filter.impressions.limit"
                 },
-                "type": "tq.sq.reviews.filter.impressions.limit"
-            },
-            "6": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.impressions.visible.no"
+                "6": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.impressions.visible.no"
+                    },
+                    "type": "tq.sq.reviews.filter.impressions.visible"
                 },
-                "type": "tq.sq.reviews.filter.impressions.visible"
-            },
-            "7": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.top50.off"
+                "7": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.top50.off"
+                    },
+                    "type": "tq.sq.reviews.filter.top50"
                 },
-                "type": "tq.sq.reviews.filter.top50"
-            },
-            "8": {
-                "1": {
-                    "type": "tq.sq.reviews.filter.date.off"
+                "8": {
+                    "1": {
+                        "type": "tq.sq.reviews.filter.date.off"
+                    },
+                    "type": "tq.sq.reviews.filter.date"
                 },
-                "type": "tq.sq.reviews.filter.date"
+                "type": "tq.sq.reviews"
             },
-            "type": "tq.sq.reviews"
+            "type": "tq.sq"
         },
         "type": "tq.root"
     },
     "schema_version": {
         "1": 0,
         "2": 0,
-        "3": 2,
-        "name": "ru.tulp.qb.reviews"
+        "3": 1,
+        "name": "ru.tulp.qb.cumulative"
     },
     "title": "Empty"
 }
